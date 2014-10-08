@@ -12,9 +12,13 @@
 
 - (IBAction)loginChat:(id)sender;
 - (IBAction)signUpChat:(id)sender;
+- (IBAction)showDialogAndUsers:(id)sender;
+
 
 @property (weak, nonatomic) IBOutlet UITextField *userName;
 @property (weak, nonatomic) IBOutlet UITextField *userPassword;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 

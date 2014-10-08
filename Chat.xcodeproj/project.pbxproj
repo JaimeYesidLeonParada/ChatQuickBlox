@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0505B8EF19E433BC0046AEAD /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0505B8EE19E433BC0046AEAD /* LoginViewController.m */; };
+		050B992819E4491800FDB7D4 /* UsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050B992719E4491800FDB7D4 /* UsersViewController.m */; };
+		050B992C19E44A0800FDB7D4 /* UIViewController+ShowAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 050B992B19E44A0800FDB7D4 /* UIViewController+ShowAlert.m */; };
+		050B993319E473CA00FDB7D4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 050B993219E473CA00FDB7D4 /* Images.xcassets */; };
+		050B993719E4759400FDB7D4 /* DialogsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 050B993619E4759400FDB7D4 /* DialogsViewController.m */; };
+		0546AA9A19E3375900303A6C /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0546AA9919E3375900303A6C /* ChatViewController.m */; };
 		05D6923619DF3ED70027B2E8 /* ChatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D6923519DF3ED70027B2E8 /* ChatService.m */; };
 		05D6923B19DF42450027B2E8 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D6923A19DF42450027B2E8 /* User.m */; };
 		05D6923F19DF51430027B2E8 /* LocalStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 05D6923E19DF51430027B2E8 /* LocalStorage.m */; };
@@ -14,7 +20,6 @@
 		05E9E67019DCB75A00A1E80C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E9E66F19DCB75A00A1E80C /* AppDelegate.m */; };
 		05E9E67319DCB75A00A1E80C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E9E67219DCB75A00A1E80C /* ViewController.m */; };
 		05E9E67619DCB75A00A1E80C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05E9E67419DCB75A00A1E80C /* Main.storyboard */; };
-		05E9E67819DCB75A00A1E80C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05E9E67719DCB75A00A1E80C /* Images.xcassets */; };
 		05E9E67B19DCB75A00A1E80C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05E9E67919DCB75A00A1E80C /* LaunchScreen.xib */; };
 		05E9E68719DCB75B00A1E80C /* ChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 05E9E68619DCB75B00A1E80C /* ChatTests.m */; };
 		05E9E69219DCB81900A1E80C /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 05E9E69119DCB81900A1E80C /* Quickblox.framework */; };
@@ -47,6 +52,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0505B8ED19E433BC0046AEAD /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewControllers/LoginViewController/LoginViewController.h; sourceTree = "<group>"; };
+		0505B8EE19E433BC0046AEAD /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewControllers/LoginViewController/LoginViewController.m; sourceTree = "<group>"; };
+		050B992619E4491800FDB7D4 /* UsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersViewController.h; path = ViewControllers/UsersViewController/UsersViewController.h; sourceTree = "<group>"; };
+		050B992719E4491800FDB7D4 /* UsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersViewController.m; path = ViewControllers/UsersViewController/UsersViewController.m; sourceTree = "<group>"; };
+		050B992A19E44A0800FDB7D4 /* UIViewController+ShowAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+ShowAlert.h"; path = "Categories/UIViewController+ShowAlert.h"; sourceTree = "<group>"; };
+		050B992B19E44A0800FDB7D4 /* UIViewController+ShowAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+ShowAlert.m"; path = "Categories/UIViewController+ShowAlert.m"; sourceTree = "<group>"; };
+		050B993219E473CA00FDB7D4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		050B993519E4759400FDB7D4 /* DialogsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DialogsViewController.h; path = ViewControllers/DialogsViewController/DialogsViewController.h; sourceTree = "<group>"; };
+		050B993619E4759400FDB7D4 /* DialogsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DialogsViewController.m; path = ViewControllers/DialogsViewController/DialogsViewController.m; sourceTree = "<group>"; };
+		0546AA9819E3375900303A6C /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatViewController.h; path = ViewControllers/ChatViewController.h; sourceTree = "<group>"; };
+		0546AA9919E3375900303A6C /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatViewController.m; path = ViewControllers/ChatViewController.m; sourceTree = "<group>"; };
 		05D6923419DF3ED70027B2E8 /* ChatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChatService.h; path = ChatService/ChatService.h; sourceTree = "<group>"; };
 		05D6923519DF3ED70027B2E8 /* ChatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChatService.m; path = ChatService/ChatService.m; sourceTree = "<group>"; };
 		05D6923919DF42450027B2E8 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = Models/User/User.h; sourceTree = "<group>"; };
@@ -61,7 +77,6 @@
 		05E9E67119DCB75A00A1E80C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		05E9E67219DCB75A00A1E80C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		05E9E67519DCB75A00A1E80C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		05E9E67719DCB75A00A1E80C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		05E9E67A19DCB75A00A1E80C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		05E9E68019DCB75B00A1E80C /* ChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		05E9E68519DCB75B00A1E80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,6 +136,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0505B8EC19E430D80046AEAD /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0505B8ED19E433BC0046AEAD /* LoginViewController.h */,
+				0505B8EE19E433BC0046AEAD /* LoginViewController.m */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		050B992519E448F000FDB7D4 /* UsersViewController */ = {
+			isa = PBXGroup;
+			children = (
+				050B992619E4491800FDB7D4 /* UsersViewController.h */,
+				050B992719E4491800FDB7D4 /* UsersViewController.m */,
+			);
+			name = UsersViewController;
+			sourceTree = "<group>";
+		};
+		050B992919E4496300FDB7D4 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				050B992A19E44A0800FDB7D4 /* UIViewController+ShowAlert.h */,
+				050B992B19E44A0800FDB7D4 /* UIViewController+ShowAlert.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		050B993119E4737500FDB7D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		050B993419E4757400FDB7D4 /* DialogsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				050B993519E4759400FDB7D4 /* DialogsViewController.h */,
+				050B993619E4759400FDB7D4 /* DialogsViewController.m */,
+			);
+			name = DialogsViewController;
+			sourceTree = "<group>";
+		};
+		0546AA9719E3373200303A6C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				050B993419E4757400FDB7D4 /* DialogsViewController */,
+				050B992519E448F000FDB7D4 /* UsersViewController */,
+				0505B8EC19E430D80046AEAD /* LoginViewController */,
+				0546AA9819E3375900303A6C /* ChatViewController.h */,
+				0546AA9919E3375900303A6C /* ChatViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		05D6923319DF3EAA0027B2E8 /* ChatService */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +247,9 @@
 		05E9E66919DCB75A00A1E80C /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				050B993119E4737500FDB7D4 /* Resources */,
+				050B992919E4496300FDB7D4 /* Categories */,
+				0546AA9719E3373200303A6C /* ViewControllers */,
 				05D6923C19DF510E0027B2E8 /* LocalStorage */,
 				05D6923719DF42200027B2E8 /* Models */,
 				05D6923319DF3EAA0027B2E8 /* ChatService */,
@@ -186,8 +259,8 @@
 				05E9E67119DCB75A00A1E80C /* ViewController.h */,
 				05E9E67219DCB75A00A1E80C /* ViewController.m */,
 				05E9E67419DCB75A00A1E80C /* Main.storyboard */,
-				05E9E67719DCB75A00A1E80C /* Images.xcassets */,
 				05E9E67919DCB75A00A1E80C /* LaunchScreen.xib */,
+				050B993219E473CA00FDB7D4 /* Images.xcassets */,
 				05E9E66A19DCB75A00A1E80C /* Supporting Files */,
 			);
 			path = Chat;
@@ -324,9 +397,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050B993319E473CA00FDB7D4 /* Images.xcassets in Resources */,
 				05E9E67619DCB75A00A1E80C /* Main.storyboard in Resources */,
 				05E9E67B19DCB75A00A1E80C /* LaunchScreen.xib in Resources */,
-				05E9E67819DCB75A00A1E80C /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,11 +417,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050B992819E4491800FDB7D4 /* UsersViewController.m in Sources */,
+				0505B8EF19E433BC0046AEAD /* LoginViewController.m in Sources */,
 				05D6923B19DF42450027B2E8 /* User.m in Sources */,
 				05E9E67319DCB75A00A1E80C /* ViewController.m in Sources */,
+				050B992C19E44A0800FDB7D4 /* UIViewController+ShowAlert.m in Sources */,
+				050B993719E4759400FDB7D4 /* DialogsViewController.m in Sources */,
 				05D6923619DF3ED70027B2E8 /* ChatService.m in Sources */,
 				05E9E67019DCB75A00A1E80C /* AppDelegate.m in Sources */,
 				05E9E66D19DCB75A00A1E80C /* main.m in Sources */,
+				0546AA9A19E3375900303A6C /* ChatViewController.m in Sources */,
 				05D6923F19DF51430027B2E8 /* LocalStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,7 +538,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -471,6 +549,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chat",
@@ -497,6 +576,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chat",

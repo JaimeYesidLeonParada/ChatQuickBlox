@@ -10,7 +10,7 @@
 #import "User.h"
 #import "LocalStorage.h"
 
-typedef void(^CompletionBlock)(QBResponse *response);
+typedef void(^CompletionBlock)(QBResponse *response, QBUUser *user);
 
 
 @interface ChatService () 
@@ -49,8 +49,10 @@ typedef void(^CompletionBlock)(QBResponse *response);
 
 #pragma mark - Methods
 - (void)loginWithUser:(User *)user
-      completionBlock:(void(^)(QBResponse *response))completionBlock
+      completionBlock:(void(^)(QBResponse *response, QBUUser *user))completionBlock
+           errorBlock:(void(^)(QBResponse *responseError))errorBlock
 {
+    
     self.loginCompletionBlock = completionBlock;
     
     QBSessionParameters *extendedAuthRequest = [[QBSessionParameters alloc] init];
@@ -71,39 +73,62 @@ typedef void(^CompletionBlock)(QBResponse *response);
                                           [[QBChat instance] loginWithUser:currentUser];
                                           
                                       } errorBlock:^(QBResponse *response) {
-                                          NSLog(@"Error en la sesion: %@", response.error);
-                                          if(self.loginCompletionBlock != nil){
-                                              self.loginCompletionBlock(response);
-                                              self.loginCompletionBlock = nil;
-                                          }
+                                          errorBlock(response);
                                       }];
 }
 
-- (void)signupWithUser:(User *)user
-       completionBlock:(void(^)(QBResponse *response, QBUUser *user))completionBlock errorBlock:(void(^)(QBResponse *responseError))errorBlock
+- (void)signupWithUser:(User *)userSignup
+       completionBlock:(void(^)(QBResponse *response, QBUUser *user))completionBlock
+            errorBlock:(void(^)(QBResponse *responseError))errorBlock
 {
     [QBRequest createSessionWithSuccessBlock:^(QBResponse *response, QBASession *session) {
         QBUUser *newUser = [QBUUser user];
-        newUser.login = user.name;
-        newUser.password = user.password;
+        newUser.login = userSignup.name;
+        newUser.password = userSignup.password;
+        newUser.fullName = userSignup.name;
         
         [QBRequest signUp:newUser successBlock:^(QBResponse *response, QBUUser *user) {
             // Success, do something
-            completionBlock(response,user);
-            errorBlock(nil);
+            //completionBlock(response,user);
+            
+            [self loginWithUser:userSignup completionBlock:completionBlock errorBlock:errorBlock];
+            
         } errorBlock:^(QBResponse *response) {
             // error handling
-            completionBlock(nil,nil);
             errorBlock(response);
         }];
     } errorBlock:^(QBResponse *response) {
-        completionBlock(nil,nil);
         errorBlock(response);
     }];
-    
 }
 
+- (void)findUsersWithCurrentPage:(NSInteger*)page perPage:(NSInteger*)perPage successBlock:(void(^)(QBResponse *response, QBGeneralResponsePage *page, NSArray *users))successBlock errorBlock:(void(^)(QBResponse *response))errorBlock
+{
+    if ([QBSession currentSession].isTokenValid){
+        QBGeneralResponsePage *responsePage = [QBGeneralResponsePage responsePageWithCurrentPage:(NSUInteger)page perPage:(NSUInteger)perPage];
+        [QBRequest usersForPage:responsePage
+                   successBlock:^(QBResponse *response, QBGeneralResponsePage *page, NSArray *users)
+         {
+             successBlock(response, page, users);
+         } errorBlock:^(QBResponse *response) {
+             errorBlock(response);
+         }];
+    }else {
+        errorBlock(nil);
+        NSLog(@"No existe una session creada o el token no es valido");
+    }
+}
 
+- (void)logoutChat:(void(^)(QBResponse *response))completionBlock errorBlock:(void(^)(QBResponse *response))errorBlock
+{
+    [QBRequest logOutWithSuccessBlock:^(QBResponse *response) {
+        completionBlock(response);
+        [self.presenceTimer invalidate];
+        self.presenceTimer = nil;
+    } errorBlock:^(QBResponse *response) {
+        errorBlock(response);
+    }];
+}
 
 #pragma mark QBChatDelegate
 
@@ -117,8 +142,11 @@ typedef void(^CompletionBlock)(QBResponse *response);
     [QBChat dialogsWithExtendedRequest:nil
                               delegate:self];
     
+    
+    
+    
     if(self.loginCompletionBlock != nil){
-        self.loginCompletionBlock(self.responseSession);
+        self.loginCompletionBlock(self.responseSession,self.currentUser);
         self.loginCompletionBlock = nil;
     }
 }
@@ -126,7 +154,7 @@ typedef void(^CompletionBlock)(QBResponse *response);
 - (void)chatDidNotLogin
 {
     if(self.loginCompletionBlock != nil){
-        self.loginCompletionBlock(nil);
+        self.loginCompletionBlock(self.responseSession,self.currentUser);
         self.loginCompletionBlock = nil;
     }
 }
@@ -154,6 +182,9 @@ typedef void(^CompletionBlock)(QBResponse *response);
         QBDialogsPagedResult *pagedResult = (QBDialogsPagedResult *)result;
         
         NSArray *dialogs = pagedResult.dialogs;
+        
+        
+        
         
         [LocalStorage shared].dialogs = [dialogs mutableCopy];
         

@@ -15,10 +15,20 @@
 + (instancetype)instance;
 
 - (void)loginWithUser:(User *)user
-      completionBlock:(void(^)(QBResponse *response))completionBlock;
-- (void)signupWithUser:(User *)user
+      completionBlock:(void(^)(QBResponse *response, QBUUser *user))completionBlock
+           errorBlock:(void(^)(QBResponse *responseError))errorBlock;
+
+- (void)signupWithUser:(User *)userSignup
        completionBlock:(void(^)(QBResponse *response, QBUUser *user))completionBlock
             errorBlock:(void(^)(QBResponse *responseError))errorBlock;
+
+- (void)findUsersWithCurrentPage:(NSInteger*)page
+                         perPage:(NSInteger*)perPage
+                    successBlock:(void(^)(QBResponse *response, QBGeneralResponsePage *page, NSArray *users))successBlock
+                      errorBlock:(void(^)(QBResponse *response))errorBlock;
+
+- (void)logoutChat:(void(^)(QBResponse *response))completionBlock
+        errorBlock:(void(^)(QBResponse *response))errorBlock;
 
 - (NSArray*)dialogs;
 - (NSArray*)users;
